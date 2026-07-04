@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#ff4d88">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Nosso Cantinho">
+  <title>Nosso Cantinho ❤️</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="stars"></div>
+  <div class="floating-hearts"></div>
+
+  <section id="bloqueado" class="locked-screen">
+    <div class="glass lock-card">
+      <p class="pill">Surpresa bloqueada ❤️</p>
+      <h1>Ainda não está na hora...</h1>
+      <p>Esse cantinho só abre no nosso dia 04. Enquanto isso, deixei um contador esperando junto com você.</p>
+      <div id="timer" class="timer"></div>
+      
+    </div>
+  </section>
+
+  <main id="app" class="app">
+    <section id="inicio" class="hero">
+      <div class="hero-content glass">
+        <p class="pill">Bom dia, meu amor ❤️</p>
+        <h1>Bem-vinda ao nosso cantinho.</h1>
+        <p>Um app feito só para você, com nossas fotos, nossa música, nosso vídeo e um pedacinho do meu coração.</p>
+        <button onclick="entrarNoApp()">Entrar ❤️</button>
+      </div>
+    </section>
+
+    <section id="musica" class="page">
+      <h2>Nossa música 🎵</h2>
+      <div class="glass music-card">
+        <div class="music-cover" id="musicCover">
+          <img src="fotos/foto3.jpg" alt="Capa da música">
+        </div>
+        <h3>Perdição — L7NNON</h3>
+        <p>Uma música para deixar esse cantinho ainda mais nosso.</p>
+
+        <audio id="audio" src="media/musica.mp3" loop></audio>
+
+        <button onclick="toggleMusic()" id="musicBtn">▶️ Tocar música</button>
+
+        <div class="progress-wrap">
+          <span id="currentTime">0:00</span>
+          <input id="progress" type="range" min="0" value="0" step="1">
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="carta" class="page">
+      <h2>Carta para você 💌</h2>
+
+      <div class="envelope-wrap" id="envelopeWrap">
+        <div class="envelope" onclick="abrirEnvelope()">
+          <div class="flap"></div>
+          <div class="paper-preview">Toque para abrir</div>
+          <div class="seal">❤️</div>
+        </div>
+      </div>
+
+      <article id="cartaAberta" class="glass letter hidden">
+        <p>Bom dia, minha princesa. ☀️</p>
+        <p>
+          Fiz esse cantinho para você abrir no celular sempre que quiser lembrar o quanto é amada.
+          Cada foto aqui guarda um pouco de nós, das nossas risadas, dos nossos planos e de tudo que estamos construindo.
+        </p>
+        <p>
+          Desde 04/06/2026, nossa amizade virou amor oficialmente. E desde então, eu tenho certeza:
+          você é uma das partes mais bonitas da minha vida.
+        </p>
+        <p>
+          Eu amo o seu sorriso, o seu jeito, nossas viagens, nossos encontros e até os momentos simples
+          que ficam gigantes porque são com você.
+        </p>
+        <p>
+          Obrigado por ser você. Obrigado por me escolher. Eu escolheria você de novo em todos os dias.
+        </p>
+        <p class="signature">Com amor,<br>Gustavo ❤️</p>
+      </article>
+    </section>
+
+    <section id="galeria" class="page">
+      <h2>Galeria 📸</h2>
+
+      <div class="tabs">
+        <button onclick="mostrarCategoria('comeco')">Nosso começo</button>
+        <button onclick="mostrarCategoria('encontros')">Encontros</button>
+        <button onclick="mostrarCategoria('viagens')">Viagens</button>
+        <button onclick="mostrarCategoria('favoritos')">Favoritos</button>
+      </div>
+
+      <div id="comeco" class="carousel active-cat"><img src="fotos/foto1.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto2.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto3.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy"></div>
+      <div id="encontros" class="carousel"><img src="fotos/foto4.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto5.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto6.webp" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy"></div>
+      <div id="viagens" class="carousel"><img src="fotos/foto7.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto8.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto9.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy"></div>
+      <div id="favoritos" class="carousel"><img src="fotos/foto10.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto11.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy"></div>
+
+      <h3 class="sub">Todas as fotos</h3>
+      <div class="grid-gallery">
+        <img src="fotos/foto1.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto2.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto3.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto4.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto5.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto6.webp" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto7.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto8.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto9.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto10.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+<img src="fotos/foto11.jpg" alt="Nossa foto" onclick="abrirZoom(this.src)" loading="lazy">
+      </div>
+    </section>
+
+    <section id="video" class="page">
+      <h2>Nosso vídeo 🎥</h2>
+      <div class="glass video-card">
+        <video id="nossoVideo" controls playsinline poster="fotos/foto9.jpg">
+          <source src="media/video.mp4" type="video/mp4">
+          Seu navegador não conseguiu abrir o vídeo.
+        </video>
+        <button onclick="playVideo()">▶️ Assistir nosso vídeo</button>
+        <p>Alguns momentos merecem ser revividos infinitamente. ❤️</p>
+      </div>
+    </section>
+
+    <section id="contador" class="page center">
+      <h2>Desde 04/06/2026 ❤️</h2>
+      <div class="glass counter-card">
+        <p>Estamos juntos há:</p>
+        <div class="counter">
+          <div><strong id="dias">0</strong><span>Dias</span></div>
+          <div><strong id="horas">0</strong><span>Horas</span></div>
+          <div><strong id="minutos">0</strong><span>Minutos</span></div>
+        </div>
+        <p>E eu escolheria você em todos eles.</p>
+      </div>
+    </section>
+
+    <section class="final">
+      <h2>Você é meu lugar favorito.</h2>
+      <p>Feliz nosso dia 04, meu amor. ❤️</p>
+    </section>
+
+    <nav class="bottom-nav">
+      <button onclick="goTo('inicio')">Início</button>
+      <button onclick="goTo('carta')">Carta</button>
+      <button onclick="goTo('galeria')">Fotos</button>
+      <button onclick="goTo('contador')">04</button>
+    </nav>
+  </main>
+
+  <div id="zoom" class="zoom" onclick="fecharZoom()">
+    <img id="zoomImg" src="" alt="Foto ampliada">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
